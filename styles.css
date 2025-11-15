@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.calculadora {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    width: 400px;
+}
+
+.pantalla {
+    background: #1a1a1a;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+    color: #fff;
+    font-size: 2.5em;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.boton {
+    background: #505050;
+    border: none;
+    padding: 25px;
+    font-size: 1.5em;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton:hover {
+    background: #606060;
+    transform: scale(1.05);
+}
+
+.boton.operador {
+    background: #ff9500;
+}
+
+.boton.operador:hover {
+    background: #ffb143;
+}
+
+.boton.funcion {
+    background: #a5a5a5;
+    color: #000;
+}
+
+.boton.funcion:hover {
+    background: #b5b5b5;
+}
+
+.boton.cero {
+    grid-column: span 2;
+}
+
+.boton.igual {
+    background: #ff9500;
+}
