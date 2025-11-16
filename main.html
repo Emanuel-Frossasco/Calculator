@@ -8,34 +8,55 @@
     <script src="./script.js"></script>
 </head>
 <body>
- <div class="calculadora">
-        <div class="pantalla" id="pantalla">0</div>
-        <div class="botones">
-            <button class="boton funcion" onclick="limpiar()">AC</button>
-            <button class="boton funcion" onclick="cambiarSigno()">+/-</button>
-            <button class="boton funcion" onclick="aplicarPorcentaje()">%</button>
-            <button class="boton operador" onclick="operacion('÷')">÷</button>
-            
-            <button class="boton" onclick="agregarNumero('7')">7</button>
-            <button class="boton" onclick="agregarNumero('8')">8</button>
-            <button class="boton" onclick="agregarNumero('9')">9</button>
-            <button class="boton operador" onclick="operacion('x')">×</button>
-            
-            <button class="boton" onclick="agregarNumero('4')">4</button>
-            <button class="boton" onclick="agregarNumero('5')">5</button>
-            <button class="boton" onclick="agregarNumero('6')">6</button>
-            <button class="boton operador" onclick="operacion('-')">-</button>
-            
-            <button class="boton" onclick="agregarNumero('1')">1</button>
-            <button class="boton" onclick="agregarNumero('2')">2</button>
-            <button class="boton" onclick="agregarNumero('3')">3</button>
-            <button class="boton operador" onclick="operacion('+')">+</button>
-            
-            <button class="boton cero" onclick="agregarNumero('0')">0</button>
-            <button class="boton" onclick="agregarNumero('.')">.</button>
-            <button class="boton igual" onclick="calcular()">=</button>
+ <div class="calculadora" id="calculadora">
+        <div class="controles">
+            <button class="boton-modo" id="botonModo" onclick="cambiarModo()">Modo Científico</button>
         </div>
-    </div>
-    </div>
+        <div class="pantalla" id="pantalla">0</div>
+        <div class="contenedor-botones">
+            <div class="botones-cientificos" id="botonesCientificos">
+                <button class="boton cientifico" onclick="funcionCientifica('sin')">sin</button>
+                <button class="boton cientifico" onclick="funcionCientifica('cos')">cos</button>
+                <button class="boton cientifico" onclick="funcionCientifica('tan')">tan</button>
+                <button class="boton cientifico" onclick="funcionCientifica('log')">log</button>
+                
+                <button class="boton cientifico" onclick="funcionCientifica('ln')">ln</button>
+                <button class="boton cientifico" onclick="funcionCientifica('sqrt')">√</button>
+                <button class="boton cientifico" onclick="funcionCientifica('pow')">x²</button>
+                <button class="boton cientifico" onclick="funcionCientifica('exp')">eˣ</button>
+                
+                <button class="boton cientifico" onclick="agregarNumero('(')">(</button>
+                <button class="boton cientifico" onclick="agregarNumero(')')">)</button>
+                <button class="boton cientifico" onclick="agregarConstante('pi')">π</button>
+                <button class="boton cientifico" onclick="agregarConstante('e')">e</button>
+            </div>
+
+            <div class="botones-basicos">
+                <button class="boton funcion" onclick="limpiar()">AC</button>
+                <button class="boton funcion" onclick="cambiarSigno()">+/-</button>
+                <button class="boton funcion" onclick="aplicarPorcentaje()">%</button>
+                <button class="boton operador" onclick="operacion('÷')">÷</button>
+            
+                <button class="boton" onclick="agregarNumero('7')">7</button>
+                <button class="boton" onclick="agregarNumero('8')">8</button>
+                <button class="boton" onclick="agregarNumero('9')">9</button>
+                <button class="boton operador" onclick="operacion('x')">×</button>
+            
+                <button class="boton" onclick="agregarNumero('4')">4</button>
+                <button class="boton" onclick="agregarNumero('5')">5</button>
+                <button class="boton" onclick="agregarNumero('6')">6</button>
+                <button class="boton operador" onclick="operacion('-')">-</button>
+            
+                <button class="boton" onclick="agregarNumero('1')">1</button>
+                <button class="boton" onclick="agregarNumero('2')">2</button>
+                <button class="boton" onclick="agregarNumero('3')">3</button>
+                <button class="boton operador" onclick="operacion('+')">+</button>
+            
+                <button class="boton cero" onclick="agregarNumero('0')">0</button>
+                <button class="boton" onclick="agregarNumero('.')">.</button>
+                <button class="boton igual" onclick="calcular()">=</button>
+            </div>
+        </div>
+    </div>    
 </body>
 </html>

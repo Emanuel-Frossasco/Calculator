@@ -11,6 +11,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
 }
 
 .calculadora {
@@ -19,6 +20,31 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     width: 400px;
+    transition: width 0.3s ease;
+}
+
+.calculadora.modo-cientifico {
+    width: 550px;
+}
+
+.controles {
+    margin-bottom: 15px;
+}
+
+.boton-modo {
+    width: 100%;
+    background: #4a4a4a;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+}
+
+.boton-modo:hover {
+    background: #5a5a5a;
 }
 
 .pantalla {
@@ -34,12 +60,30 @@ body {
     align-items: center;
     justify-content: flex-end;
     overflow: hidden;
+    word-break: break-all;
 }
 
-.botones {
+.contenedor-botones {
+    display: flex;
+    gap: 15px;
+}
+
+.botones-cientificos {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.calculadora.modo-cientifico .botones-cientificos {
+    display: grid;
+}
+
+.botones-basicos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    flex: 1;
 }
 
 .boton {
@@ -59,6 +103,16 @@ body {
 .boton:hover {
     background: #606060;
     transform: scale(1.05);
+}
+
+.boton.cientifico {
+    background: #3a3a3a;
+    font-size: 1em;
+    padding: 15px 5px;
+}
+
+.boton.cientifico:hover {
+    background: #4a4a4a;
 }
 
 .boton.operador {
@@ -84,4 +138,14 @@ body {
 
 .boton.igual {
     background: #ff9500;
+}
+
+@media (max-width: 600px) {
+    .calculadora.modo-cientifico {
+        width: 95vw;
+    }
+    
+    .contenedor-botones {
+        flex-direction: column;
+    }
 }
