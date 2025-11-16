@@ -1,1 +1,1 @@
-Calculadora cientifica
+Calculadora con funcion simple y funcion cintifica
